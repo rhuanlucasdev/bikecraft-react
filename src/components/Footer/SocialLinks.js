@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const socials = [
   {
@@ -22,7 +23,7 @@ export default function SocialLinks() {
   return (
     <>
       {socials.map((social) => (
-        <a
+        <Link
           key={social.name}
           href={social.url}
           target="_blank"
@@ -34,7 +35,7 @@ export default function SocialLinks() {
             width={32}
             height={32}
           />
-        </a>
+        </Link>
       ))}
     </>
   );

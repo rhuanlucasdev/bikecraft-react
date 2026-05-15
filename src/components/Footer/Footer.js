@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./footer.module.css";
 import SocialLinks from "./SocialLinks";
 import FooterNav from "./FooterNav";
@@ -17,10 +18,12 @@ export default function Footer() {
           <h3 className="font-2-l-b cor-0">Contato</h3>
           <ul className="font-2-m cor-5">
             <li>
-              <a href="tel:+5521999999999">+55 21 99999-9999</a>
+              <Link href="tel:+5521999999999">+55 21 99999-9999</Link>
             </li>
             <li>
-              <a href="mailto:contato@bikcraft.com">contato@bikcraft.com</a>
+              <Link href="mailto:contato@bikcraft.com">
+                contato@bikcraft.com
+              </Link>
             </li>
             <li>Av. Paulista, 2100</li>
             <li>São Paulo, SP</li>

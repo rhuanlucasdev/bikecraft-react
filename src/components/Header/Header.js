@@ -1,28 +1,29 @@
 import Image from "next/image";
 import styles from "./header.module.css";
+import Link from "next/link";
 
 export default function Header() {
   return (
     <header className={styles["header-bg"]}>
       <div className={`${styles.header} container`}>
-        <a href="/">
+        <Link href="/">
           <Image
             src="/img/bikcraft.svg"
             alt="Bikcraft Logo"
             width={132}
             height={32}
           />
-        </a>
+        </Link>
         <nav>
           <ul className={`${styles["header-menu"]} font-1-m cor-0`}>
             <li>
-              <a href="/bicicletas">Bicicletas</a>
+              <Link href="/bicicletas">Bicicletas</Link>
             </li>
             <li>
-              <a href="/seguros">Seguros</a>
+              <Link href="/seguros">Seguros</Link>
             </li>
             <li>
-              <a href="/contato">Contato</a>
+              <Link href="/contato">Contato</Link>
             </li>
           </ul>
         </nav>

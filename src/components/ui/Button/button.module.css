@@ -1,0 +1,61 @@
+.button {
+  display: inline-block;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 4px;
+  max-width: max-content;
+
+  background: linear-gradient(#ffbf00, #f2a50c);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+
+  color: var(--cor-p5);
+  font:
+    600 1.125rem/1.35 "Poppins",
+    sans-serif;
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
+
+.button:hover {
+  background: linear-gradient(#ffb60d, #e59317);
+}
+
+.secondary {
+  background: var(--cor-10);
+  color: var(--cor-2);
+}
+
+.secondary:hover {
+  background: var(--cor-9);
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+}
+
+.arrow::after {
+  content: "";
+  display: inline-block;
+
+  width: 18px;
+  height: 10px;
+
+  margin-left: 12px;
+
+  background: url("/img/icones/seta.svg");
+
+  transition: transform 0.2s;
+}
+
+.arrow:hover::after {
+  transform: translateX(4px);
+}
+
+@media (max-width: 600px) {
+  .button {
+    padding: 12px 16px;
+    font-size: 1rem;
+  }
+}

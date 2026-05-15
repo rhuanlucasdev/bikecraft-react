@@ -1,3 +1,4 @@
+import Link from "next/link";
 const links = [
   {
     name: "Bicicletas",
@@ -23,7 +24,7 @@ export default function FooterNav() {
       <ul className="font-2-m cor-5">
         {links.map((link) => (
           <li key={link.name}>
-            <a href={link.url}>{link.name}</a>
+            <Link href={link.url}>{link.name}</Link>
           </li>
         ))}
       </ul>
