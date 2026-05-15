@@ -1,7 +1,14 @@
+import ContatoSection from "@/components/pages/contato/ContatoSection";
+
+export const metadata = {
+  title: "Contato | Bikcraft",
+};
+
 export default function ContatoPage() {
   return (
     <>
-      <h1 className="font-1-xxl cor-12">Contato</h1>
+      <ContatoSection />
+      
     </>
   );
 }

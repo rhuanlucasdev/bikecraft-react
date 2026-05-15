@@ -19,7 +19,7 @@ const socials = [
   },
 ];
 
-export default function SocialLinks() {
+export default function SocialLinks({ variant = "default" }) {
   return (
     <>
       {socials.map((social) => (
@@ -30,7 +30,11 @@ export default function SocialLinks() {
           rel="noopener noreferrer"
         >
           <Image
-            src={social.icon}
+            src={
+              variant === "gold"
+                ? social.icon.replace(".svg", "-p.svg")
+                : social.icon
+            }
             alt={`${social.name}`}
             width={32}
             height={32}
