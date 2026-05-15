@@ -11,8 +11,8 @@
 # 🚲 Bikecraft — Next.js Version
 
 <p>
-  Recriação do projeto Bikecraft em arquitetura moderna com <strong>React 19</strong> e <strong>Next.js App Router</strong>,<br/>
-  transformando uma aplicação estática em uma estrutura escalável baseada em componentes reutilizáveis.
+  Recriação do projeto Bikecraft em arquitetura moderna com <strong>React 19</strong> e <strong>Next.js App Router</strong>,
+  organizada por rotas, páginas e componentes reutilizáveis.
 </p>
 
 <br/>
@@ -23,9 +23,9 @@
 
 ## 🧭 Sobre o Projeto
 
-O **Bikcraft** foi originalmente desenvolvido durante estudos de frontend utilizando HTML semântico, CSS e JavaScript puros. Esta versão em **Next.js** representa uma migração de arquitetura com foco em modernização, componentização e boas práticas do desenvolvimento frontend atual.
+O **Bikecraft** nasceu como um estudo de frontend com HTML semântico, CSS e JavaScript puros. Esta versão em **Next.js** atualiza a base do projeto para uma estrutura mais escalável, com rotas dedicadas, layout compartilhado e composição por componentes.
 
-O projeto serve como exercício prático de evolução como desenvolvedor, aplicando React 19, Next.js App Router e CSS Modules em uma aplicação real com design fiel ao original.
+O foco atual é manter o visual e a proposta do projeto original enquanto a aplicação evolui com práticas mais próximas do desenvolvimento moderno em React.
 
 ---
 
@@ -49,23 +49,24 @@ O projeto serve como exercício prático de evolução como desenvolvedor, aplic
 
 <br/>
 
-| Tecnologia      | Versão | Uso no projeto                                                 |
-| --------------- | ------ | -------------------------------------------------------------- |
-| **Next.js**     | 16.2.6 | Framework principal com App Router para roteamento e rendering |
-| **React**       | 19.2.4 | Construção de interfaces com componentes reutilizáveis         |
-| **React DOM**   | 19.2.4 | Renderização no navegador                                      |
-| **CSS Modules** | —      | Escopo isolado de estilos por componente                       |
-| **ESLint**      | ^9     | Padronização e qualidade de código                             |
-| **next/image**  | —      | Otimização automática de imagens                               |
-| **next/link**   | —      | Navegação client-side com prefetch automático                  |
+| Tecnologia      | Versão | Uso no projeto                                            |
+| --------------- | ------ | --------------------------------------------------------- |
+| **Next.js**     | 16.2.6 | Framework principal com App Router para rotas e rendering |
+| **React**       | 19.2.4 | Construção de interfaces com componentes reutilizáveis    |
+| **React DOM**   | 19.2.4 | Renderização no navegador                                 |
+| **CSS Modules** | —      | Escopo isolado de estilos por componente                  |
+| **ESLint**      | ^9     | Padronização e qualidade de código                        |
+| **next/font**   | —      | Carregamento otimizado de fontes                          |
+| **next/image**  | —      | Otimização automática de imagens                          |
+| **next/link**   | —      | Navegação client-side com prefetch automático             |
 
 ---
 
 ## 🎯 Objetivos do Projeto
 
 - Praticar **componentização** no React 19
-- Aprender arquitetura moderna com **Next.js App Router**
-- Transformar elementos repetitivos em **componentes reutilizáveis**
+- Estruturar a aplicação com **Next.js App Router**
+- Separar páginas, seções e componentes reutilizáveis
 - Melhorar **organização e escalabilidade** do código
 - Aplicar **boas práticas** de frontend moderno
 - Utilizar **otimizações nativas** do Next.js
@@ -77,39 +78,39 @@ O projeto serve como exercício prático de evolução como desenvolvedor, aplic
 ```
 bikecraft-react/
 │
-├── public/                     # Arquivos estáticos públicos
+├── public/
+│   ├── img/
+│   └── videos/
 │
 ├── src/
-│   ├── app/                    # App Router do Next.js
-│   │   ├── layout.jsx          # Layout raiz da aplicação
-│   │   ├── page.jsx            # Página inicial
-│   │   └── globals.css         # Estilos globais
+│   ├── app/
+│   │   ├── layout.js
+│   │   ├── page.js
+│   │   ├── not-found.js
+│   │   ├── globals.css
+│   │   ├── bicicletas/page.js
+│   │   ├── contato/page.js
+│   │   └── seguros/page.js
 │   │
-│   ├── components/
-│   │   ├── ui/                 # Componentes genéricos e reutilizáveis
-│   │   │   ├── Button/
-│   │   │   │   ├── Button.jsx
-│   │   │   │   └── Button.module.css
-│   │   │   └── SectionTitle/
-│   │   │       ├── SectionTitle.jsx
-│   │   │       └── SectionTitle.module.css
-│   │   │
-│   │   └── domain/             # Componentes de domínio da aplicação
-│   │       ├── BikeCard/
-│   │       ├── InsuranceCard/
-│   │       ├── SocialLinks/
-│   │       └── FooterNav/
-│   │
-│   └── sections/               # Grandes áreas da página
-│       ├── Hero/
+│   └── components/
+│       ├── BikeCard.js
 │       ├── BikeList/
-│       ├── Technology/
-│       ├── Partners/
-│       ├── Testimonial/
-│       ├── Insurance/
-│       └── Footer/
+│       ├── Footer/
+│       ├── Header/
+│       ├── Home/
+│       │   ├── Hero/
+│       │   ├── Tecnologias/
+│       │   ├── Parceiros/
+│       │   └── Depoimentos/
+│       ├── NotFound/
+│       ├── Seguros/
+│       ├── pages/
+│       │   ├── bicicletas/
+│       │   ├── contato/
+│       │   └── seguros/
+│       └── ui/
+│           └── Button/
 │
-├── .gitignore
 ├── eslint.config.mjs
 ├── jsconfig.json
 ├── next.config.mjs
@@ -119,75 +120,46 @@ bikecraft-react/
 
 ---
 
-## 🧩 Arquitetura de Componentes
+## 🧩 Arquitetura Atual
 
-### Componentes de UI — `components/ui/`
+### Layout compartilhado
 
-Componentes **genéricos, reutilizáveis e independentes** da regra de negócio. Podem ser usados em qualquer contexto sem acoplamento.
+O arquivo de layout centraliza a estrutura global da aplicação com `Header` e `Footer`, além de carregar a fonte via `next/font`.
 
-**`Button`** — Botão com suporte a variantes de estilo:
+### Página inicial
 
-```jsx
-<Button variant="primary" href="/bikes">
-  Ver bicicletas
-</Button>
-```
+A home é composta por seções já organizadas em componentes separados:
 
-**`SectionTitle`** — Título padronizado de seção, garantindo consistência visual:
+- `Hero`
+- `BikeList`
+- `Tecnologias`
+- `Parceiros`
+- `Depoimentos`
+- `SegurosSection`
 
-```jsx
-<SectionTitle label="Nossas bikes" title="Modelos exclusivos" />
-```
+### Rotas internas
 
----
+Além da home, o projeto possui páginas dedicadas para `bicicletas`, `contato` e `seguros`, cada uma montando sua própria composição de seções e componentes.
 
-### Componentes de Domínio — `components/domain/`
+### Componentes reutilizáveis
 
-Componentes com significado específico dentro do contexto Bikecraft:
-
-<div align="center">
-
-| Componente      | Responsabilidade                                         |
-| --------------- | -------------------------------------------------------- |
-| `BikeCard`      | Exibe informações de uma bicicleta (nome, preço, imagem) |
-| `InsuranceCard` | Apresenta um plano de seguro disponível                  |
-| `SocialLinks`   | Lista de links para redes sociais                        |
-| `FooterNav`     | Navegação interna do rodapé                              |
-
-</div>
-
----
-
-### Seções da Página — `sections/`
-
-Grandes áreas que compõem a estrutura completa da página. O `page.jsx` torna-se declarativo — apenas uma composição de seções:
-
-<div align="center">
-
-| Seção         | Descrição                               |
-| ------------- | --------------------------------------- |
-| `Hero`        | Seção principal com chamada para ação   |
-| `BikeList`    | Listagem de bicicletas disponíveis      |
-| `Technology`  | Diferenciais tecnológicos dos produtos  |
-| `Partners`    | Parceiros e marcas associadas           |
-| `Testimonial` | Depoimentos de clientes                 |
-| `Insurance`   | Planos de seguro oferecidos             |
-| `Footer`      | Rodapé completo com links e informações |
-
-</div>
+- `Button` concentra variações de botão e link
+- `BikeCard` representa um item de bicicleta
+- `Header` e `Footer` são compartilhados em toda a aplicação
 
 ---
 
 ## ✅ Funcionalidades Implementadas
 
-- [x] Navegação com `next/link` (client-side routing + prefetch)
-- [x] Otimização de imagens com `next/image`
-- [x] Componentização de cards e seções
-- [x] Botões reutilizáveis com variantes
+- [x] Roteamento com App Router do Next.js
+- [x] Layout global com `Header` e `Footer`
+- [x] Página inicial composta por seções reutilizáveis
+- [x] Páginas dedicadas para `bicicletas`, `contato` e `seguros`
+- [x] Página 404 personalizada
+- [x] Componentização de cards, listas e blocos visuais
 - [x] CSS Modules para escopo isolado de estilos
-- [x] Estilos globais organizados
-- [x] Responsividade baseada no projeto original
-- [x] Estrutura escalável baseada em componentes
+- [x] Uso de `next/image` e `next/link`
+- [x] Metadados por página
 - [x] Configuração de ESLint com `eslint-config-next`
 
 ---
@@ -233,19 +205,15 @@ npm run lint     # Verifica padrões de código com ESLint
 
 ### Por que CSS Modules?
 
-Mantém a familiaridade com CSS puro do projeto original, adicionando escopo local de estilos por componente — sem a necessidade de uma biblioteca de CSS-in-JS e sem conflitos globais de classe.
+Mantém a familiaridade com CSS puro do projeto original, adicionando escopo local de estilos por componente sem dependência de bibliotecas de CSS-in-JS.
 
-### Por que separar `ui/` e `domain/`?
+### Por que dividir por páginas e componentes?
 
-A separação respeita o princípio de **baixo acoplamento**. Componentes em `ui/` são portáveis e agnósticos ao negócio. Componentes de domínio carregam o contexto específico do Bikecraft.
-
-### Por que `sections/`?
-
-As seções encapsulam as grandes áreas visuais da página. O `page.jsx` torna-se declarativo e limpo — apenas uma composição de seções, sem lógica visual embutida.
+Separar `app/` de `components/` deixa as rotas enxutas e concentra a lógica visual nos blocos que realmente precisam renderizar conteúdo.
 
 ### Por que React 19 + Next.js 16?
 
-Utilizando as versões mais recentes do ecossistema para praticar com as APIs mais modernas, incluindo melhorias de performance e novos hooks do React 19.
+O projeto acompanha versões recentes do ecossistema para praticar com a API moderna do React e com as otimizações nativas do Next.js.
 
 ---
 
@@ -253,11 +221,11 @@ Utilizando as versões mais recentes do ecossistema para praticar com as APIs ma
 
 Este projeto consolida conhecimentos em:
 
-- **App Router** do Next.js (layout, page, estrutura de rotas)
-- **Componentização progressiva**: partir de HTML estático e identificar limites naturais de cada componente
+- **App Router** do Next.js (layout, rotas e metadados)
+- **Componentização progressiva** a partir de uma interface estática
 - **CSS Modules** em um projeto React real
-- **Separação de responsabilidades** entre UI genérica e componentes de domínio
-- **Otimizações do Next.js**: carregamento eficiente de imagens e prefetch de rotas
+- **Separação de responsabilidades** entre páginas, seções e componentes de apoio
+- **Otimizações do Next.js** para imagens, navegação e fontes
 - **React 19**: novas APIs e melhorias de performance
 
 ---
