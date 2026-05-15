@@ -1,17 +1,19 @@
 import BikeList from "@/components/BikeList/BikeList";
-import Footer from "@/components/Footer/Footer";
-import Header from "@/components/Header/Header";
-import Hero from "@/components/Hero/Hero";
-import Tecnologias from "@/components/Tecnologias/Tecnologias";
+import Hero from "@/components/Home/Hero/Hero";
+import Tecnologias from "@/components/Home/Tecnologias/Tecnologias";
+import Parceiros from "@/components/Home/Parceiros/Parceiros";
+import Depoimentos from "@/components/Home/Depoimentos/Depoimentos";
+import SegurosSection from "@/components/Seguros/SegurosSection";
 
 export default function Home() {
   return (
     <>
-      <Header />
       <Hero />
       <BikeList />
       <Tecnologias />
-      <Footer />
+      <Parceiros />
+      <Depoimentos />
+      <SegurosSection />
     </>
   );
 }

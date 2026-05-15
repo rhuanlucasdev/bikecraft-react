@@ -1,28 +1,33 @@
+"use client";
 import Link from "next/link";
 import styles from "./tecnologias.module.css";
 import Image from "next/image";
+import useSimpleAnime from "@/hooks/useSimpleAnime";
 
 export default function Tecnologias() {
+  useSimpleAnime();
   return (
     <article className={styles["tecnologia-bg"]}>
       <div className={`${styles.tecnologia} container`}>
         <div className={styles["tecnologia-conteudo"]}>
-          <span className="font-2-l-b cor-5">Tecnologia Avançada</span>
-          <h2 className="font-1-xxl cor-0">
+          <span data-anime="200" className="font-2-l-b cor-5 fadeInUp">
+            Tecnologia Avançada
+          </span>
+          <h2 data-anime="200" className="font-1-xxl cor-0 fadeInUp">
             você escolhe as suas cores e componentes
-            <span class="cor-p1">.</span>
+            <span className="cor-p1">.</span>
           </h2>
-          <p className="font-2-l cor-5">
+          <p data-anime="300" className="font-2-l cor-5 fadeInUp">
             Cada Bikcraft é única e possui a sua identidade. As medidas serão
             exatas para o seu corpo e altura, garantindo maior conforto e
             ergonomia na sua pedalada. Você pode também personalizar
             completamente as suas cores.
           </p>
-          <Link href="/bikes" className="link">
+          <Link data-anime="400" href="/bikes" className="link fadeInUp">
             Escolha um modelo
           </Link>
           <div className={styles["tecnologia-vantagens"]}>
-            <div>
+            <div data-anime="300" className="fadeInLeft">
               <Image
                 src="/img/icones/eletrica.svg"
                 width={24}
@@ -36,7 +41,7 @@ export default function Tecnologias() {
                 gasta ao pedalar.
               </p>
             </div>
-            <div>
+            <div data-anime="400" className="fadeInRight">
               <Image
                 src="/img/icones/rastreador.svg"
                 width={24}
@@ -51,7 +56,10 @@ export default function Tecnologias() {
             </div>
           </div>
         </div>
-        <div className={styles["tecnologia-imagem"]}>
+        <div
+          className={`${styles["tecnologia-imagem"]} fadeInRight fadeInScale`}
+          data-anime="600"
+        >
           <Image
             src="/img/fotos/tecnologia.jpg"
             width={1200}

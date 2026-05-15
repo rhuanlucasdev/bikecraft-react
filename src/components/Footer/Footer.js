@@ -8,13 +8,18 @@ export default function Footer() {
   return (
     <footer className={styles["footer-bg"]}>
       <div className={`${styles.footer} container`}>
-        <Image
-          src="/img/bikcraft.svg"
-          alt="bikcraft logo"
-          width={132}
-          height={32}
-        />
-        <div className={styles["footer-contato"]}>
+        <div data-anime="100" className="fadeInLeft">
+          <Image
+            src="/img/bikcraft.svg"
+            alt="bikcraft logo"
+            width={132}
+            height={32}
+          />
+        </div>
+        <div
+          data-anime="200"
+          className={`${styles["footer-contato"]} fadeInUp`}
+        >
           <h3 className="font-2-l-b cor-0">Contato</h3>
           <ul className="font-2-m cor-5">
             <li>
@@ -28,15 +33,24 @@ export default function Footer() {
             <li>Av. Paulista, 2100</li>
             <li>São Paulo, SP</li>
           </ul>
-          <div className={styles["footer-redes"]}>
+          <div
+            data-anime="300"
+            className={`${styles["footer-redes"]} fadeInUp`}
+          >
             <SocialLinks />
           </div>
         </div>
-        <div className={styles["footer-informacoes"]}>
+        <div
+          data-anime="300"
+          className={`${styles["footer-informacoes"]} fadeInUp`}
+        >
           <h3 className="font-2-l-b cor-0">Informações</h3>
           <FooterNav />
         </div>
-        <p className={`${styles["footer-copy"]} font-2-m cor-6`}>
+        <p
+          data-anime="400"
+          className={`${styles["footer-copy"]} font-2-m cor-6 fadeInUp`}
+        >
           {new Date().getFullYear()} Bikcraft © Todos os direitos reservados.
         </p>
       </div>

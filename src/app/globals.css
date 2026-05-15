@@ -214,29 +214,56 @@ img[src$=".jpg"] {
 }
 
 /* Animations */
-.js .fadeInDown {
-  transform: translate3d(0, -20px, 0);
-}
-.js .fadeInUp {
-  transform: translate3d(0, 20px, 0);
-}
-.js .fadeInRight {
-  transform: translate3d(20px, 0, 0);
-}
-.js .fadeInLeft {
-  transform: translate3d(-20px, 0, 0);
-}
-
-.js [data-anime] {
+[data-anime] {
   opacity: 0;
 }
 
-.js .anime {
+/* Entradas com direção */
+.fadeInDown {
+  transform: translate3d(0, -20px, 0);
+}
+
+.fadeInUp {
+  transform: translate3d(0, 20px, 0);
+}
+
+.fadeInRight {
+  transform: translate3d(20px, 0, 0);
+}
+
+.fadeInLeft {
+  transform: translate3d(-20px, 0, 0);
+}
+
+/* Zoom suave (ótimo pra cards e imagens) */
+.fadeInScale {
+  transform: scale(0.95);
+}
+
+/* Blur leve (efeito premium em hero/imagens grandes) */
+.fadeInBlur {
+  transform: scale(1.02);
+  filter: blur(8px);
+}
+
+/* Hover micro interação (usar em cards/botões) */
+.hoverLift {
+  transition: transform 0.3s ease;
+}
+
+.hoverLift:hover {
+  transform: translateY(-4px);
+}
+
+/* Estado final da animação */
+.anime {
   opacity: 1;
   transform: none;
+  filter: blur(0);
   transition:
     transform 0.8s,
-    opacity 0.8s;
+    opacity 0.8s,
+    filter 0.8s;
 }
 
 /* Utilitario */
@@ -299,4 +326,22 @@ img[src$=".jpg"] {
 
 .rounded {
   border-radius: 4px;
+}
+
+.media {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.media {
+  aspect-ratio: 920 / 1040;
+}
+
+.video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
